@@ -47,11 +47,7 @@ Title -> Syslog UDP
 Port -> 5140  
 Save  
 
-<div align="center">
-    <img src="/screenshots/sysloginput.jpg" width="400px"</img>
-</div>
-License
--------
+
 
 GNU General Public License v3.0
 
