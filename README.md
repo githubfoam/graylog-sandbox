@@ -48,6 +48,15 @@ Port -> 5140
 Save  
 
 
+<<<<<<< HEAD
+=======
+<div align="center">
+    <img src="/screenshots/sysloginput.JPG" width="400px"</img> 
+</div>
+
+License
+-------
+>>>>>>> a717adb5a0cbf5f4d0ef8a94b5ec05742f9c4441
 
 GNU General Public License v3.0
 
