@@ -47,9 +47,9 @@ Title -> Syslog UDP
 Port -> 5140  
 Save  
 
-![screenshots ](/screenshots/sysloginput.jpg?raw=true "Optional Title")
-![screenshots](https://github.com/githubfoam/graylog-sandbox/raw/dev/img/sysloginput.jpg)
-
+<div align="center">
+    <img src="/screenshots/sysloginput.jpg" width="400px"</img>
+</div>
 License
 -------
 
