@@ -47,9 +47,6 @@ Title -> Syslog UDP
 Port -> 5140  
 Save  
 
-![[Add input node](https://raw.github.com/{githubfoam}/graylog-sandbox/dev/screenshots/sysloginput.JPG)
-![Add input node](https://raw.github.com/{githubfoam}/graylog-sandbox/dev/screenshots/sysloginput.JPG)
-![Screenshot](/screenshots/sysloginput.JPG)
 
 <div align="center">
     <img src="/screenshots/sysloginput.JPG" width="400px"</img> 
