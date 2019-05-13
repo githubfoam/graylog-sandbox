@@ -31,15 +31,16 @@ login : user/password admin/yourpassword
 control-machine - apache2 server  
 http://192.168.45.21  
 
-Graylog Server Configuration Steps:  
-System/Inputs Menu  
+Graylog Server Configuration Steps:  Add input node
+System Menu
+Inputs  
 Select Input -> Syslog UDP  
 Launch New Input  
-Node ->ansi01  
+Node -> ansi01  
 Title -> Syslog UDP  
 Port -> 5140  
 Save  
- 
+
 
 License
 -------
