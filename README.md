@@ -1,7 +1,13 @@
 # graylog-sandbox
-=========
+=========  
 graylog testing
 
+graylog https://www.graylog.org  
+elasticsearch  https://www.elastic.co    
+mongodb https://www.mongodb.com  
+openjdk https://openjdk.java.net      
+vagrant https://www.vagrantup.com  
+virtualbox https://www.virtualbox.org
 
 ----------------
 
@@ -41,7 +47,7 @@ Title -> Syslog UDP
 Port -> 5140  
 Save  
 
-
+![screenshots ](/screenshots/sysloginput.jpg?raw=true "Optional Title")
 License
 -------
 
