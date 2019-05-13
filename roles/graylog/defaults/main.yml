@@ -1,0 +1,7 @@
+---
+# defaults file for common
+mongodb_major_minor_version: v4.0
+mongodb_version: 4.0
+ipv4_address: 192.168.45.2
+graylog_admin: admin
+graylog_pwd: yourpassword

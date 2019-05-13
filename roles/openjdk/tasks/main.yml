@@ -1,0 +1,20 @@
+---
+# tasks file for common
+- name: Include version-specific variables for Ubuntu.
+  include_vars: "{{ ansible_distribution }}-{{ ansible_distribution_version.split('.')[0] }}.yml"
+  when: ansible_distribution == 'Ubuntu'
+- name: Define java_packages.
+  set_fact:
+    java_packages: "{{ java_packages | list }}"
+  when: java_packages is not defined
+- include_tasks: setup-Debian.yml
+  when: ansible_os_family == 'Debian'
+# Environment setup.
+- name: Set JAVA_HOME
+  lineinfile:
+    dest: /etc/environment
+    state: present
+    regexp: '^JAVA_HOME'
+    line: 'JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk'
+# - name: Activate JAVA_HOME
+#   shell: source /etc/environment

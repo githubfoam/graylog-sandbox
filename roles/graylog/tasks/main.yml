@@ -1,0 +1,50 @@
+---
+# tasks file for common
+- name: Download  graylog 3.x repository
+  get_url:
+    url: https://packages.graylog2.org/repo/packages/graylog-3.0-repository_latest.deb
+    dest: /home/vagrant
+
+- name: Install graylog 3.x repository
+  shell: dpkg -i /home/vagrant/graylog-3.0-repository_latest.deb
+
+- name: Update repositories cache and install graylog-server
+  apt:
+    name: graylog-server
+    update_cache: yes
+
+- name: enable service graylog-server
+  systemd:
+    name: graylog-server
+    enabled: yes
+
+- name: make sure graylog-server is running
+  systemd:
+    state: started
+    name: graylog-server
+
+- name: Configure Graylog
+  template:
+      src: server.conf.j2
+      dest: /etc/graylog/server/server.conf
+      owner: root
+      group: root
+      mode: 0644
+
+- name: restart graylog-server in all cases, also issue daemon-reload to pick up config changes
+  systemd:
+    state: restarted
+    daemon_reload: yes
+    name: graylog-server
+
+# Auto add global syslog input
+# - name: create graylog global udp input for receiving logs
+#   uri:
+#     url: http://{{ ipv4_address }}:9000/api/system/inputs
+#     method: POST
+#     user: "{{ graylog_admin }}"
+#     password: "{{ graylog_pwd }}"
+#     body: '{"title":"syslog","type":"org.graylog2.inputs.syslog.udp.SyslogUDPInput","attributes":{"bind_address":"0.0.0.0","port":5140,"recv_buffer_size":262144,"override_source":null,"global":true}'
+#     force_basic_auth: yes
+#     status_code: 201
+#     body_format: json

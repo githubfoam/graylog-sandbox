@@ -1,0 +1,9 @@
+---
+- hosts: ansi01
+  become: yes
+  roles:
+    - common
+    - openjdk
+    - elastic-search
+    - mongodb
+    - graylog

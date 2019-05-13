@@ -1,0 +1,7 @@
+---
+- hosts: control-machine
+  become: yes
+  roles:
+    - common
+    - githubfoam.apache
+    - graylog-client

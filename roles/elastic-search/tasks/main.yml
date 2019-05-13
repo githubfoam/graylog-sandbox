@@ -1,0 +1,57 @@
+---
+# tasks file for common
+- name: Install Elasticsearch repository
+  when: es_use_repository
+  become: yes
+  block:
+  - name: Debian - Install apt-transport-https to support https APT downloads
+    apt:
+      name: apt-transport-https
+      state: present
+
+  - name: Debian - Add Elasticsearch repository key
+    apt_key:
+      url: '{{ es_apt_key }}'
+      state: present
+    when: es_apt_key | string
+
+  - name: Debian - Add elasticsearch repository
+    apt_repository:
+      repo: '{{ item.repo }}'
+      state: '{{ item.state }}'
+    with_items:
+      - { repo: "{{ es_apt_url }}", state: "present" }
+
+- name: Debian - Ensure elasticsearch is installed
+  become: yes
+  apt:
+    name: '{{ es_package_name }}'
+    state: present
+- name: enable service elasticsearch
+  systemd:
+    name: elasticsearch
+    enabled: yes
+- name: make sure elasticsearch is running
+  systemd:
+    state: started
+    name: elasticsearch
+- name: uploading elasticsearch.yml file
+  template:
+      src: elasticsearch.yml.j2
+      dest: /etc/elasticsearch/elasticsearch.yml
+      owner: root
+      group: root
+      mode: 0644
+- name: restart elasticsearch in all cases, also issue daemon-reload to pick up config changes
+  systemd:
+    state: restarted
+    daemon_reload: yes
+    name: elasticsearch
+  # - name: Ensure that cluster name shows as graylog
+  #   shell : curl -X GET http://localhost:9200
+  #   register: out
+  # - debug: var=out.stdout_lines
+  # - name: Make sure the output yields the cluster status as green
+  #   shell : curl -XGET 'http://localhost:9200/_cluster/health?pretty=true'
+  #   register: out
+  # - debug: var=out.stdout_lines

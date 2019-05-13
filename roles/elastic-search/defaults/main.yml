@@ -1,0 +1,7 @@
+---
+# defaults file for common
+es_use_repository: true
+es_package_name: "elasticsearch"
+es_repo_name: 6.x
+es_apt_key: "https://artifacts.elastic.co/GPG-KEY-elasticsearch"
+es_apt_url: "deb https://artifacts.elastic.co/packages/{{ es_repo_name }}/apt stable main"
