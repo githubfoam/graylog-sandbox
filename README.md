@@ -48,7 +48,10 @@ Port -> 5140
 Save  
 
 ![Alt Text](https://raw.github.com/{githubfoam}/graylog-sandbox/dev/screenshots/sysloginput.jpg)
-
+![Screenshot](/screenshots/sysloginput.jpg)
+<div align="center">
+    <img src="/screenshots/sysloginput.jpg" width="400px"</img> 
+</div>
 License
 -------
 
