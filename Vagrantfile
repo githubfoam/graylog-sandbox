@@ -26,7 +26,7 @@ Vagrant.configure("2") do |config|
     webtier.vm.network "forwarded_port", guest: 80, host: 80
     webtier.vm.provider "virtualbox" do |vb|
         vb.name = "control-machine"
-        vb.memory = "512"
+        vb.memory = "4096"
     end
     # https://www.vagrantup.com/docs/provisioning/ansible_local.html
     # ansible-galaxy command is executed by default as vagrant user
