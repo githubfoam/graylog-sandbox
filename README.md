@@ -1,6 +1,6 @@
 # graylog-sandbox
-=========  
-graylog testing
+
+[![Build Status](https://travis-ci.com/githubfoam/graylog-sandbox.svg?branch=dev)](https://travis-ci.com/githubfoam/graylogy-sandbox)
 
 graylog https://www.graylog.org  
 elasticsearch  https://www.elastic.co    
