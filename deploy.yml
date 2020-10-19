@@ -4,6 +4,6 @@
   roles:
     - common
     - openjdk
-    - elastic-search
-    - mongodb
-    - graylog
+    # - elastic-search
+    # - mongodb
+    # - graylog
