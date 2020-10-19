@@ -36,9 +36,9 @@ vagrant up --provider=libvirt
 # vagrant box add "fedora/32-cloud-base" --provider=libvirt
 # vagrant up --provider=libvirt "vg-controller-86"
 
-vagrant box add "bento/debian-10.4" --provider=virtualbox
-vagrant mutate "bento/debian-10.4" libvirt
-vagrant up --provider=libvirt "vg-controller-87"
+# vagrant box add "bento/debian-10.4" --provider=virtualbox
+# vagrant mutate "bento/debian-10.4" libvirt
+# vagrant up --provider=libvirt "vg-controller-87"
 
 vagrant box list #veridy installed boxes
 vagrant status #Check the status of the VMs to see that none of them have been created yet
