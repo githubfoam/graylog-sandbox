@@ -1,12 +1,21 @@
 ---
 # tasks file for common
-- name: Download  graylog 3.x repository
+# - name: Download  graylog 3.x repository
+#   get_url:
+#     url: https://package1s.graylog2.org/repo/packages/graylog-3.0-repository_latest.deb
+#     dest: /home/vagrant
+
+# - name: Install graylog 3.x repository
+#   shell: dpkg -i /home/vagrant/graylog-3.0-repository_latest.deb
+
+# https://docs.graylog.org/en/4.1/pages/installation/os/ubuntu.html#ubuntuguide
+- name: Download  graylog 4.x repository
   get_url:
-    url: https://packages.graylog2.org/repo/packages/graylog-3.0-repository_latest.deb
+    url: https://packages.graylog2.org/repo/packages/graylog-4.1-repository_latest.deb
     dest: /home/vagrant
 
-- name: Install graylog 3.x repository
-  shell: dpkg -i /home/vagrant/graylog-3.0-repository_latest.deb
+- name: Install graylog 4.x repository
+  shell: dpkg -i /home/vagrant/graylog-4.1-repository_latest.deb
 
 - name: Update repositories cache and install graylog-server
   apt:

@@ -20,7 +20,8 @@ Vagrant.configure("2") do |config|
   end
 
   config.vm.define "control-machine" do |webtier|
-    webtier.vm.box = "bento/ubuntu-18.04"
+    # webtier.vm.box = "bento/ubuntu-18.04"
+    webtier.vm.box = "bento/ubuntu-20.04"
     webtier.vm.hostname = "control-machine"
     webtier.vm.network "private_network", ip: "192.168.45.20"
     webtier.vm.network "forwarded_port", guest: 80, host: 80
@@ -45,13 +46,23 @@ Vagrant.configure("2") do |config|
     # run browser and type http://192.168.45.10/
           sudo apt-get update
           echo "control-machine up && running"
+          echo "===================================================================================="
+          hostnamectl status
+          echo "===================================================================================="
+          echo "         \   ^__^                                                                  "
+          echo "          \  (oo)\_______                                                          "
+          echo "             (__)\       )\/\                                                      "
+          echo "                 ||----w |                                                         "
+          echo "                 ||     ||                                                         "
+          echo "===========================================================1========================="          
     SHELL
   end
 
 
 
     config.vm.define "ansi01" do |webtier|
-      webtier.vm.box = "bento/ubuntu-18.04"
+      # webtier.vm.box = "bento/ubuntu-18.04"
+      webtier.vm.box = "bento/ubuntu-20.04"
       webtier.vm.hostname = "ansi01"
       webtier.vm.network "private_network", ip: "192.168.45.21"
       webtier.vm.network "forwarded_port", guest: 9000, host: 9000
@@ -72,6 +83,15 @@ Vagrant.configure("2") do |config|
       webtier.vm.provision "shell", inline: <<-SHELL
             sudo apt-get update
             echo "ansi01 up && running"
+            echo "===================================================================================="
+            hostnamectl status
+            echo "===================================================================================="
+            echo "         \   ^__^                                                                  "
+            echo "          \  (oo)\_______                                                          "
+            echo "             (__)\       )\/\                                                      "
+            echo "                 ||----w |                                                         "
+            echo "                 ||     ||                                                         "
+            echo "===========================================================1========================="
       SHELL
     end
 
