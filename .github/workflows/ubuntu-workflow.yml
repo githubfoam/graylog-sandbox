@@ -16,15 +16,15 @@ jobs:
     - uses: actions/checkout@v2
     - name: "os fingerprinting"
       run: hostnamectl status    
-    - name: "python2 virtualenv"
-      run: |
-        pip install virtualenv
-        virtualenv -p $(which python3) ~venvpy3
-        source ~venvpy3/bin/activate
-        pip install -r requirements.txt 
-        virtualenv --version
-        pip list
-        deactivate
+    # - name: "python2 virtualenv"
+    #   run: |
+    #     pip install virtualenv
+    #     virtualenv -p $(which python3) ~venvpy3
+    #     source ~venvpy3/bin/activate
+    #     pip install -r requirements.txt 
+    #     virtualenv --version
+    #     pip list
+    #     deactivate
 
   ubuntu-1804-virtualenv-job:
     name: "ubuntu-18.04 jenkins virtualenv job"
